@@ -12,8 +12,11 @@ public class BancoService {
 
 		conta1.depositar(1000);
 		System.out.println(conta1.toString());
+		System.out.println();
 		conta1.sacar(1500);
+		System.out.println();
 		System.out.println(conta1.toString());
+		System.out.println();
 		conta1.sacar(100);
 		System.out.println(conta1.toString());
 
@@ -22,9 +25,9 @@ public class BancoService {
 
 		conta2.depositar(150);
 		conta2.calcularJuros();
-
+		System.out.println();
 		System.out.println(conta2.toString());
-		System.out.println(conta2.calcularJuros());
+		System.out.println("Taxa de juros de " + conta2.calcularJuros()+ "%");
 
 	}
 

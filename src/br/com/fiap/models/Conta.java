@@ -3,7 +3,7 @@ package br.com.fiap.models;
 public class Conta implements Transacao {
 	private Cliente titular;
 	private int numeroConta;
-	protected double saldo;
+	private double saldo;
 
 	// Construtor padrão
 	public Conta() {

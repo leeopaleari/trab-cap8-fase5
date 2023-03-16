@@ -15,19 +15,24 @@ public class ContaCorrente extends Conta {
 		this.limiteChequeEspecial = limiteChequeEspecial;
 	}
 
+	public double getSaldoDisponivel() {
+		return super.getSaldo() + limiteChequeEspecial;
+	}
+
 	@Override
 	public void sacar(double valor) {
 		if (valor > this.getSaldo() + this.limiteChequeEspecial) {
 			System.out.println("Saldo insuficiente!");
 		} else {
-			this.saldo -= valor;
+			double novoSaldo = this.getSaldo() - valor;
+			this.setSaldo(novoSaldo);
 		}
 	}
 
 	@Override
 	public String toString() {
-		return this.getTitular().toString() + ", " + "\n" + "conta: " + this.getNumeroConta() + ", saldo: "
-				+ "R$" + this.getSaldo();
+		return super.getTitular().toString() + ", " + "\n" + "conta: " + super.getNumeroConta() + ", saldo: " + "R$"
+				+ super.getSaldo();
 	}
 
 }
